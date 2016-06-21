@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h1>{{main.title}}</h1>
+
+  <div class="clear">
+  	<div class="span-full">
+  		<button class="button" type="file" ngf-select="main.uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">
+  			Select File
+  		</button>
+
+		<br><br>
+		File:
+		<div>
+			{{main.f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+			<span class="progress" ng-show="main.f.progress >= 0">
+				<div style="width:{{main.f.progress}}%" ng-bind="main.f.progress + '%'"></div>
+			</span>
+		</div>
+		{{errorMsg}}
+  		<div ng-if="main.result.success">
+  			<h2>Your image</h2>
+  			<p>
+  				<img src="{{main.result.data}}" />
+  			</p>
+  			<h2>Your URL</h2>
+			<p>
+				<a href="{{main.result.data}}" target="_blank" rel="external">{{main.result.data}}</a>
+			</p>
+  		</div>
+  	</div>
+  </div>
+
+</div>

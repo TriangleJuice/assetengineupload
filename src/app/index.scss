@@ -1,0 +1,29 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    background: green;
+    color: white;
+    display: inline-block;
+    padding: 4px;
+    width: 100px;
+    // border: 3px groove #CCC;
+}
+
+.progress div {
+    width: 0;
+}
