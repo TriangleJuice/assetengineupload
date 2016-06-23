@@ -43,7 +43,7 @@
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// Resulting link -->
-      <div class="spacer-t">
+      <!-- <div class="spacer-t">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
@@ -58,19 +58,23 @@
             <p><a href="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
           </div>
         </div>
-      </div>
-      <!-- <div class="spacer-t" ng-if="main.result.success">
+      </div> -->
+      <div class="spacer-t" ng-if="main.result.success">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
-            <img ng-src="{{main.result.data}}" alt="Preview" />
+            <img ng-src="{{main.result.data}}" />
           </div>
           <div class="span-8-5 tablet--span-10-3">
-            <div class="filu-link">{{main.result.data}}</div>
-            <p><a href="{{main.result.data}}" target="_blank" rel="external">Open afbeelding</a></p>
+            <div class="filu-result">
+              <span class="filu-link">{{main.result.data}}</span>
+              <button class="button filu-button" ngclipboard data-clipboard-text="{{main.result.data}}" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
+              <span class="filu-copy color-gray">Gekopieerd</span>
+            </div>
+            <p><a href="{{main.result.data}}" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
           </div>
         </div>
-      </div> -->
+      </div>
 
 
 
