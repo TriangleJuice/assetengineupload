@@ -6,51 +6,65 @@
   <div class="clear spacer-t">
   	<div class="span-full">
 
-<!-- //////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////// Upload field -->
   		<div
         class="upload"
         ng-class="{'disabled': main.uploadIsBusy}"
+        ng-if="!main.uploadIsBusy"
         type="file"
         ngf-select="main.uploadFiles($file, $invalidFiles)"
         ngf-drop="main.uploadFiles($file, $invalidFiles)"
         ngf-max-height="1000"
         ngf-max-size="10MB"
         accept="image/*">
-  			<span class="clear header-medium"><strong>Sleep hier een bestand</strong> of klik om te bladeren</span>
+  			<span class="clear"><strong>Sleep hier een bestand</strong> of klik om te <span class="color-blue">bladeren</span></span>
         <span class="clear color-gray">Maximum bestandsgrootte: 10MB</span>
   		</div>
-<!-- //////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////// Show in case of error -->
       <div class="spacer-t" ng-if="errorMsg">
         <h2 class="header-large">Er is iets fout gelopen</h2>
         <div class="box-highlight-danger">
-          Bla blab al is fout gelopen
           {{errorMsg}}
         </div>
       </div>
-<!-- //////////////////////////////////////////////////////////////// -->
-      <div class="spacer-t text-center" ng-if="main.uploadIsBusy">
-        <div class="spinner-05">
-          <div class="cube">
-            <figure class="front"></figure>
-            <figure class="back"></figure>
-            <figure class="right"></figure>
-            <figure class="left"></figure>
-            <figure class="top"></figure>
-            <figure class="bottom"></figure>
+<!-- //////////////////////////////////////////////////////////////// Show while loading -->
+      <div class="spacer-b" ng-if="main.uploadIsBusy">
+        <h2 class="header-large">Aan het laden…</h2>
+        <div class="text-center">
+          <div class="spinner-05">
+            <div class="cube">
+              <figure class="front"></figure>
+              <figure class="back"></figure>
+              <figure class="right"></figure>
+              <figure class="left"></figure>
+              <figure class="top"></figure>
+              <figure class="bottom"></figure>
+            </div>
           </div>
         </div>
       </div>
-<!-- //////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////// Resulting link -->
+      <!-- <div class="spacer-t">
+        <h2 class="header-large">Jouw link</h2>
+        <div class="clear">
+          <div class="span-4-1 tablet--span-2-1">
+            <img ng-src="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" />
+          </div>
+          <div class="span-8-5 tablet--span-10-3">
+            <div class="filu-link">https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg</div>
+            <p><a href="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" target="_blank" rel="external">Open afbeelding</a></p>
+          </div>
+        </div>
+      </div> -->
       <div class="spacer-t" ng-if="main.result.success">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
-            <img ng-src="{{main.result.data}}" />
+            <img ng-src="{{main.result.data}}" alt="Preview" />
           </div>
-          <div class="span-8-3 tablet--span-10-1">
-            <div class="filu-link">
-              <a href="{{main.result.data}}" target="_blank" rel="external">{{main.result.data}}</a>
-            </div>
+          <div class="span-8-5 tablet--span-10-3">
+            <div class="filu-link">{{main.result.data}}</div>
+            <p><a href="{{main.result.data}}" target="_blank" rel="external">Open afbeelding</a></p>
           </div>
         </div>
       </div>
