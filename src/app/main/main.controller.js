@@ -11,15 +11,20 @@
 
     vm.title = "FiLu";
 
+    vm.uploadIsBusy = false;
+
     vm.result = {
-    	success: false
+        success: false
     }
 
     vm.uploadFiles = function(file, errFiles) {
-    	// console.log(file);
         vm.f = file;
         vm.errFile = errFiles && errFiles[0];
+
         if (file) {
+            vm.result.success = false;
+            vm.uploadIsBusy = true;
+
             file.upload = Upload.upload({
                 url: 'http://localhost:3000/srv/image',
                 data: {file: file}
@@ -29,11 +34,12 @@
                 $timeout(function () {
                     file.result = response.data;
                     vm.result = response.data;
-                    // console.log(vm.result);
+                    vm.uploadIsBusy = false;
                 });
             }, function (response) {
                 if (response.status > 0)
                     vm.errorMsg = response.status + ': ' + response.data;
+                    vm.uploadIsBusy = false;
             }, function (evt) {
                 file.progress = Math.min(100, parseInt(100.0 *
                                          evt.loaded / evt.total));

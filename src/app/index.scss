@@ -1,29 +1,63 @@
 /* Do not remove the comments below. It's the markers used by wiredep to inject
-   sass dependencies when defined in the bower.json of your dependencies */
+sass dependencies when defined in the bower.json of your dependencies */
 // bower:scss
 // endbower
 
-.thumb {
-    width: 24px;
-    height: 24px;
-    float: none;
-    position: relative;
-    top: 7px;
+/**
+* A-kit
+*/
+// @import "../../bower_components/sasskit/dist/scss/api";
+
+$sizer: 1.5rem;
+
+$alpha-ui-color:                        #0064B4;
+$beta-background:                       #F3F3F5;
+
+$animation-speed:                       .2s;
+$upload-border-radius:                  0;
+$upload-hover-background-color:         lighten($alpha-ui-color, 62%);
+$upload-border-color:                   $alpha-ui-color;
+$upload-padding:                        $sizer;
+
+
+
+/**
+* Our styles
+*/
+.container {
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: $sizer;
 }
 
-form .progress {
-    line-height: 15px;
+.upload {
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 2px dashed $upload-border-color;
+    border-radius: $upload-border-radius;
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    padding: $upload-padding;
+    text-align: center;
+    transition: background $animation-speed linear;
+
+    &:hover,
+    &.dragover {
+        background: $upload-hover-background-color;
+        cursor: pointer;
+    }
+
+    &.disabled {
+        opacity: .4;
+        pointer-events: none;
+    }
 }
 
-.progress {
-    background: green;
-    color: white;
-    display: inline-block;
-    padding: 4px;
-    width: 100px;
-    // border: 3px groove #CCC;
-}
-
+.filu-link {
+    background: $beta-background;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
 .progress div {
     width: 0;
 }

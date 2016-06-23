@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('assetengineupload', ['ngRoute', 'ngFileUpload']);
+    .module('assetengineupload', ['ngRoute', 'ngFileUpload', 'tink.upload']);
 
 })();
