@@ -7,7 +7,7 @@
   	<div class="span-full">
 
 <!-- //////////////////////////////////////////////////////////////// Resulting link -->
-      <!-- <div class="spacer-t">
+      <!-- <div class="spacer-t-s">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div> -->
-      <div class="spacer-t" ng-if="main.result.success">
+      <div class="spacer-t-s" ng-if="main.result.success">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
@@ -40,7 +40,7 @@
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// Upload field -->
-  		<div class="spacer-t" ng-if="!main.uploadIsBusy">
+  		<div class="spacer-t-s" ng-if="!main.uploadIsBusy">
         <h2 class="header-large">Upload<span ng-if="main.result.success"> nog</span> een afbeelding</h2>
         <div
           class="filu-upload"
@@ -55,14 +55,14 @@
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// Show in case of error -->
-      <div class="spacer-t" ng-if="errorMsg">
+      <div class="spacer-t-s" ng-if="errorMsg">
         <h2 class="header-large">Er is iets fout gelopen</h2>
         <div class="box-highlight-danger">
           {{errorMsg}}
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// Show while loading -->
-      <div class="spacer-t spacer-b" ng-if="main.uploadIsBusy">
+      <div class="spacer-t-s spacer-b" ng-if="main.uploadIsBusy">
         <h2 class="header-large">Aan het laden…</h2>
         <div class="text-center">
           <div class="filu-spinner">
