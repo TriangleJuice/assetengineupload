@@ -28,15 +28,24 @@
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// -->
-      <div class="spacer-t" ng-if="main.uploadIsBusy">
-        Spinner comes here
+      <div class="spacer-t text-center" ng-if="main.uploadIsBusy">
+        <div class="spinner-05">
+          <div class="cube">
+            <figure class="front"></figure>
+            <figure class="back"></figure>
+            <figure class="right"></figure>
+            <figure class="left"></figure>
+            <figure class="top"></figure>
+            <figure class="bottom"></figure>
+          </div>
+        </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// -->
       <div class="spacer-t" ng-if="main.result.success">
         <h2 class="header-large">Jouw link</h2>
         <div class="clear">
           <div class="span-4-1 tablet--span-2-1">
-            <img src="{{main.result.data}}" />
+            <img ng-src="{{main.result.data}}" />
           </div>
           <div class="span-8-3 tablet--span-10-1">
             <div class="filu-link">
