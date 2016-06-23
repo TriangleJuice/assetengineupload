@@ -27,3 +27,86 @@ form .progress {
 .progress div {
     width: 0;
 }
+
+// Spinner
+.spinner-05 {
+    perspective:1200px;
+    perspective-origin:50% 50%;
+    width:48px;height:48px;
+    position:relative;
+    margin: 0 auto;
+}
+
+.spinner-05 .cube
+{
+	animation: spin-cube 3s infinite ease-in-out;
+	height: 100%;
+	position: absolute;
+	transform: translateZ(-24px);
+	transform-style: preserve-3d;
+	width: 100%;
+}
+
+.spinner-05 figure
+{
+	display: block;
+	height: 48px;
+	position: absolute;
+	width: 48px;
+}
+.spinner-05 figure.front
+{
+    background: #CF0039 url("../assets/images/a-logo.svg") 0 0 no-repeat;
+    background-size: cover;
+    transform: translateZ(24px);
+    top: 24px;
+}
+
+.spinner-05 figure.back
+{
+	background: #CF0039;
+	transform: rotateX(-180deg) translateZ(24px);
+}
+.spinner-05 figure.right
+{
+	background: #0064B4;
+	transform: rotateY(90deg) translateZ(24px);
+}
+.spinner-05 figure.left
+{
+	background: #0064B4;
+	transform: rotateY(-90deg) translateZ(24px);
+}
+.spinner-05 figure.top
+{
+	background: #004881;
+	transform: rotateX(90deg) translateZ(24px);
+}
+.spinner-05 figure.bottom
+{
+	background: #004881;
+	transform: rotateX(-90deg) translateZ(24px);
+}
+
+@-webkit-keyframes spin-cube
+{
+	0%
+	{
+		transform: translateZ(-24px) rotateX(0deg) rotateY(0deg);
+	}
+	100%
+	{
+		transform: translateZ(-24px) rotateX(360deg) rotateY(360deg);
+	}
+}
+@keyframes spin-cube
+{
+	0%
+	{
+		transform: translateZ(-24px) rotateX(0deg) rotateY(0deg);
+	}
+	100%
+	{
+		transform: translateZ(-24px) rotateX(360deg) rotateY(360deg);
+	}
+}
