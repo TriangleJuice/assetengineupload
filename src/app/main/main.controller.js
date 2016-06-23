@@ -19,6 +19,7 @@
 
     vm.uploadFiles = function(file, errFiles) {
         vm.f = file;
+        vm.errorMsg = '';
         vm.errFile = errFiles && errFiles[0];
 
         if (file) {
