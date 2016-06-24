@@ -80,12 +80,6 @@ $upload-padding:                        $sizer;
         top: 0;
         width: auto;
     }
-
-    &:active {
-        + .filu-copy {
-            animation: fadeout 1s ease-in;
-        }
-    }
 }
 
 .filu-copy {
@@ -93,6 +87,10 @@ $upload-padding:                        $sizer;
     position: absolute;
     right: 0;
     top: -$sizer;
+
+    &.animate-copy {
+        animation: fadeout 1s ease-in infinite;
+    }
 }
 
 // Spinner

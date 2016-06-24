@@ -17,7 +17,7 @@
         success: false
     }
 
-    vm.uploadFiles = function(file, errFiles) {
+    vm.uploadFiles = function uploadFiles(file, errFiles) {
         vm.f = file;
         vm.errorMsg = '';
         vm.errFile = errFiles && errFiles[0];
@@ -46,6 +46,13 @@
                                          evt.loaded / evt.total));
             });
         }
+    }
+
+    vm.giveCopyFeedback = function giveCopyFeedback() {
+        $(".filu-copy").addClass("animate-copy");
+        $(".filu-copy").one('animationiteration webkitAnimationIteration', function() {
+            $(this).removeClass("animate-copy");
+        });
     }
 
   }

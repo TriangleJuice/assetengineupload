@@ -16,10 +16,10 @@
           <div class="span-8-5 tablet--span-10-3">
             <div class="filu-result">
               <span class="filu-link">https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg</span>
-              <button class="button filu-button" ngclipboard data-clipboard-text="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
+              <button class="button filu-button" ngclipboard data-clipboard-text="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" ng-click="main.giveCopyFeedback()" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
               <span class="filu-copy color-gray">Gekopieerd</span>
             </div>
-            <p><a href="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
+            <p><a href="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Bekijk afbeelding</a></p>
           </div>
         </div>
       </div> -->
@@ -32,10 +32,10 @@
           <div class="span-8-5 tablet--span-10-3">
             <div class="filu-result">
               <span class="filu-link">{{main.result.data}}</span>
-              <button class="button filu-button" ngclipboard data-clipboard-text="{{main.result.data}}" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
+              <button class="button filu-button" ngclipboard data-clipboard-text="{{main.result.data}}" ng-click="main.giveCopyFeedback()" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
               <span class="filu-copy color-gray">Gekopieerd</span>
             </div>
-            <p><a href="{{main.result.data}}" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
+            <p><a href="{{main.result.data}}" title="Bekijk afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
           </div>
         </div>
       </div>
