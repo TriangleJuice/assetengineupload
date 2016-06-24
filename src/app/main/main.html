@@ -16,7 +16,7 @@
           <div class="span-8-5 tablet--span-10-3">
             <div class="filu-result">
               <span class="filu-link">https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg</span>
-              <button class="button filu-button" ngclipboard data-clipboard-text="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" ng-click="main.giveCopyFeedback()" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
+              <button class="button filu-button" ngclipboard data-clipboard-text="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" copyfeedback title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
               <span class="filu-copy color-gray">Gekopieerd</span>
             </div>
             <p><a href="https://assets.antwerpen.be/srv/assets/api/image/0f5cb89a-6272-4329-95ce-c9f3b8b81fd7/stromae-optimized.jpg" title="Open afbeelding in een nieuw venster" target="_blank" rel="external">Bekijk afbeelding</a></p>
@@ -32,7 +32,7 @@
           <div class="span-8-5 tablet--span-10-3">
             <div class="filu-result">
               <span class="filu-link">{{main.result.data}}</span>
-              <button class="button filu-button" ngclipboard data-clipboard-text="{{main.result.data}}" ng-click="main.giveCopyFeedback()" title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
+              <button class="button filu-button" ngclipboard data-clipboard-text="{{main.result.data}}" ng-click="main.giveCopyFeedback()" copyfeedback title="Kopieer link van afbeelding naar het klembord"><span class="fa fa-copy"></span></button>
               <span class="filu-copy color-gray">Gekopieerd</span>
             </div>
             <p><a href="{{main.result.data}}" title="Bekijk afbeelding in een nieuw venster" target="_blank" rel="external">Open afbeelding</a></p>
@@ -47,11 +47,10 @@
           type="file"
           ngf-select="main.uploadFiles($file, $invalidFiles)"
           ngf-drop="main.uploadFiles($file, $invalidFiles)"
-          ngf-max-height="1000"
           ngf-max-size="10MB"
           accept="image/*">
           <span class="clear"><strong>Sleep hier een bestand</strong> of klik om te <span class="color-blue">bladeren</span></span>
-          <span class="clear color-gray">Maximum bestandsgrootte: 10MB</span>
+          <span class="clear color-gray">Maximum bestandsgrootte: 10 MB</span>
         </div>
       </div>
 <!-- //////////////////////////////////////////////////////////////// Show in case of error -->
@@ -78,32 +77,5 @@
         </div>
       </div>
 
-
-
-
-
-
-
-<!-- 		<br><br>
-		File:
-		<div>
-			{{main.f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
-			<span class="progress" ng-show="main.f.progress >= 0">
-				<div style="width:{{main.f.progress}}%" ng-bind="main.f.progress + '%'"></div>
-			</span>
-		</div>
-		{{errorMsg}}
-  		<div ng-if="main.result.success">
-  			<h2>Your image</h2>
-  			<p>
-  				<img src="{{main.result.data}}" />
-  			</p>
-  			<h2>Your URL</h2>
-			<p>
-				<a href="{{main.result.data}}" target="_blank" rel="external">{{main.result.data}}</a>
-			</p>
-  		</div>
-  	</div> -->
   </div>
-
 </div>

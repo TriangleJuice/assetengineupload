@@ -15,6 +15,12 @@
   "overrides": {
     "tink-core": {
       "main": []
+    },
+    "font-awesome": {
+      "main": []
+    },
+    "normalize-css": {
+      "main": []
     }
   },
   "resolutions": {

@@ -48,12 +48,5 @@
         }
     }
 
-    vm.giveCopyFeedback = function giveCopyFeedback() {
-        $(".filu-copy").addClass("animate-copy");
-        $(".filu-copy").one('animationiteration webkitAnimationIteration', function() {
-            $(this).removeClass("animate-copy");
-        });
-    }
-
   }
 })();
